@@ -9,11 +9,12 @@
       font-family: Pretendard, sans-serif;
       background-color: #f8fafc;
       margin: 0;
-      padding: 24px 16px;
+      padding: 16px;
     }
     .container {
       max-width: 360px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 0 12px;
     }
     h1 {
       text-align: center;
@@ -23,17 +24,17 @@
     }
     label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-size: 14px;
       color: #374151;
     }
     input[type="text"],
     input[type="tel"],
-    input[type="email"],
     input[type="file"],
+    input[type="email"],
     textarea {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       border: 1px solid #cbd5e1;
       border-radius: 8px;
       margin-bottom: 16px;
@@ -41,23 +42,24 @@
     }
     .radio-group {
       display: flex;
-      gap: 16px;
+      justify-content: space-between;
       margin-bottom: 16px;
     }
     .radio-group label {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      font-size: 14px;
     }
     .checkbox-group {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
     .submit-btn {
       width: 100%;
-      padding: 16px;
+      padding: 14px;
       background-color: #2563eb;
       color: white;
       border: none;
@@ -69,6 +71,18 @@
       max-width: 100%;
       display: block;
       margin: 0 auto 16px;
+    }
+    .privacy-section {
+      font-size: 12px;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .privacy-title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #1f2937;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -115,6 +129,31 @@
 
       <label for="bank">통장 사본</label>
       <input type="file" name="통장사본" id="bank" required />
+
+      <div class="privacy-title">디스테이션 디패스 개인정보 이용동의</div>
+      <div class="privacy-section">
+        <p>디스테이션 디패스 가입을 위해 아래와 같이 개인정보를 수집 및 이용하고자 합니다.<br>
+        내용을 충분히 숙지하신 후 동의 여부를 결정해 주시기 바랍니다.</p>
+
+        <p><strong>1. 수집 및 이용 목적</strong><br>
+        • 협력사 개설을 위한 신원 확인 및 자격 검토<br>
+        • 계약 체결 및 운영 관리<br>
+        • 관련 법령에 따른 의무 이행</p>
+
+        <p><strong>2. 수집하는 개인정보 항목</strong><br>
+        • 필수 항목: 성명, 연락처(전화번호, 이메일), 주소, 사업자등록번호, 신분증 사본<br>
+        • 선택 항목: 추가 연락처, 배송원 등록 정보 등 협력사 운영과 관련된 정보</p>
+
+        <p><strong>3. 보유 및 이용 기간</strong><br>
+        수집된 개인정보는 협력사 관계가 종료된 이후에도 관련 법령에 따라 일정 기간 보관되며, 보관 기간 종료 후 즉시 파기됩니다.<br>
+        • 보유 기간: 운영 종료 후 3년 (법적 의무 사항에 따라 변경 가능)</p>
+
+        <p><strong>4. 동의 거부권 및 불이익</strong><br>
+        귀하는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있습니다.<br>
+        다만, 동의를 거부할 경우 협력사 개설이 제한될 수 있습니다.</p>
+
+        <p><strong>동의 여부를 위해 아래에 체크해 주시기 바랍니다.</strong></p>
+      </div>
 
       <div class="checkbox-group">
         <input type="checkbox" name="개인정보동의" value="동의함" id="agree" required />

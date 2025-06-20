@@ -95,7 +95,6 @@
 <body>
   <div class="container">
     <form id="form">
-      <!-- 로고 -->
       <a href="https://dstationsoft.com">
         <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" />
       </a>
@@ -178,7 +177,7 @@
     document.getElementById("form").addEventListener("submit", function (e) {
       e.preventDefault();
 
-      emailjs.sendForm("service_nq7igxj", "service_nq7igxj", this)
+      emailjs.sendForm("service_nq7igxj", "template_282mlya", this)
         .then(function () {
           alert("가입 신청이 성공적으로 전송되었습니다!");
           document.getElementById("form").reset();

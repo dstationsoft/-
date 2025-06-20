@@ -35,23 +35,35 @@
       margin-bottom: 16px;
       font-size: 14px;
     }
-    .radio-group, .checkbox-group {
+
+    .radio-group {
       display: flex;
-      gap: 24px;
+      gap: 16px;
       margin-bottom: 16px;
-      align-items: center;
     }
-    .radio-inline {
-      display: flex;
-      gap: 8px;
+
+    .radio-option {
+      display: inline-flex;
       align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #374151;
     }
+
     .upload-group {
       margin-bottom: 16px;
     }
     .upload-group input {
       border-style: dashed;
     }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
     .submit-btn {
       width: 100%;
       padding: 16px;
@@ -62,6 +74,7 @@
       font-size: 16px;
       cursor: pointer;
     }
+
     .footer-text {
       text-align: center;
       margin-top: 16px;
@@ -72,7 +85,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- 로고 -->
     <a href="https://dstationsoft.com">
       <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" style="display:block; margin:0 auto 16px; max-width:120px;" />
     </a>
@@ -93,11 +105,11 @@
 
     <label>협력사 운영여부</label>
     <div class="radio-group">
-      <label class="radio-inline">
-        예 <input type="radio" name="partner" value="yes" />
+      <label class="radio-option">
+        <input type="radio" name="partner" value="yes" /> 예
       </label>
-      <label class="radio-inline">
-        아니오 <input type="radio" name="partner" value="no" />
+      <label class="radio-option">
+        <input type="radio" name="partner" value="no" /> 아니오
       </label>
     </div>
 
@@ -106,11 +118,11 @@
 
     <label>선정산 적용여부</label>
     <div class="radio-group">
-      <label class="radio-inline">
-        적용 <input type="radio" name="prepay" value="yes" />
+      <label class="radio-option">
+        <input type="radio" name="prepay" value="yes" /> 적용
       </label>
-      <label class="radio-inline">
-        미적용 <input type="radio" name="prepay" value="no" />
+      <label class="radio-option">
+        <input type="radio" name="prepay" value="no" /> 미적용
       </label>
     </div>
 
@@ -131,10 +143,8 @@
 
     <label>개인정보 수집 및 이용에 동의합니다.</label>
     <div class="checkbox-group">
-      <label class="radio-inline">
-        <input type="checkbox" id="agree" />
-        <a href="#">[자세히 보기]</a>
-      </label>
+      <input type="checkbox" id="agree" />
+      <label for="agree"><a href="#">[자세히 보기]</a></label>
     </div>
 
     <button class="submit-btn">가입 신청하기</button>

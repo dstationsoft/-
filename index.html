@@ -37,16 +37,14 @@
     }
     .radio-group, .checkbox-group {
       display: flex;
-      gap: 16px;
+      gap: 24px;
       margin-bottom: 16px;
       align-items: center;
     }
-    .radio-group label,
-    .checkbox-group label {
+    .radio-inline {
       display: flex;
+      gap: 8px;
       align-items: center;
-      gap: 6px;
-      margin: 0;
     }
     .upload-group {
       margin-bottom: 16px;
@@ -74,7 +72,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- D PASS 로고 -->
+    <!-- 로고 -->
     <a href="https://dstationsoft.com">
       <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" style="display:block; margin:0 auto 16px; max-width:120px;" />
     </a>
@@ -95,11 +93,11 @@
 
     <label>협력사 운영여부</label>
     <div class="radio-group">
-      <label for="partner-yes">예
-        <input type="radio" id="partner-yes" name="partner" value="yes" />
+      <label class="radio-inline">
+        예 <input type="radio" name="partner" value="yes" />
       </label>
-      <label for="partner-no">아니오
-        <input type="radio" id="partner-no" name="partner" value="no" />
+      <label class="radio-inline">
+        아니오 <input type="radio" name="partner" value="no" />
       </label>
     </div>
 
@@ -108,11 +106,11 @@
 
     <label>선정산 적용여부</label>
     <div class="radio-group">
-      <label for="prepay-yes">적용
-        <input type="radio" id="prepay-yes" name="prepay" value="yes" />
+      <label class="radio-inline">
+        적용 <input type="radio" name="prepay" value="yes" />
       </label>
-      <label for="prepay-no">미적용
-        <input type="radio" id="prepay-no" name="prepay" value="no" />
+      <label class="radio-inline">
+        미적용 <input type="radio" name="prepay" value="no" />
       </label>
     </div>
 
@@ -133,7 +131,7 @@
 
     <label>개인정보 수집 및 이용에 동의합니다.</label>
     <div class="checkbox-group">
-      <label for="agree">
+      <label class="radio-inline">
         <input type="checkbox" id="agree" />
         <a href="#">[자세히 보기]</a>
       </label>

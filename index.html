@@ -41,6 +41,53 @@
       margin-bottom: 16px;
       align-items: center;
     }
+    .radio-group label,
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+    }
     .upload-group {
       margin-bottom: 16px;
     }
+    .upload-group input {
+      border-style: dashed;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .footer-text {
+      text-align: center;
+      margin-top: 16px;
+      color: #2563eb;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- D PASS 로고 -->
+    <a href="https://dstationsoft.com">
+      <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" style="display:block; margin:0 auto 16px; max-width:120px;" />
+    </a>
+
+    <h1>디스테이션 디패스 회원가입</h1>
+
+    <label for="owner">영업자</label>
+    <input type="text" id="owner" placeholder="예: 홍길동" />
+
+    <label for="name">성함</label>
+    <input type="text" id="name" placeholder="예: 김대표" />
+
+    <label for="phone">휴대폰번호</label>
+    <input type="tel" id="phone" placeholder="예: 010-1234-5678" />
+
+    <label for="baeminId">배민비즈회원아이디</label>

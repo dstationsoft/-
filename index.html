@@ -27,7 +27,10 @@
       font-size: 14px;
       color: #374151;
     }
-    input, select {
+    input[type="text"],
+    input[type="tel"],
+    input[type="file"],
+    select {
       width: 100%;
       padding: 12px;
       border: 1px solid #cbd5e1;
@@ -36,23 +39,23 @@
       font-size: 14px;
     }
 
-    .radio-group {
+    .inline-options {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       margin-bottom: 16px;
     }
 
-    .radio-option {
-      display: inline-flex;
+    .inline-options label {
+      display: flex;
       align-items: center;
       gap: 6px;
       font-size: 14px;
-      color: #374151;
     }
 
     .upload-group {
       margin-bottom: 16px;
     }
+
     .upload-group input {
       border-style: dashed;
     }
@@ -60,7 +63,7 @@
     .checkbox-group {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 16px;
     }
 
@@ -104,26 +107,18 @@
     <input type="text" id="baeminId" placeholder="예: baemin1234" />
 
     <label>협력사 운영여부</label>
-    <div class="radio-group">
-      <label class="radio-option">
-        <input type="radio" name="partner" value="yes" /> 예
-      </label>
-      <label class="radio-option">
-        <input type="radio" name="partner" value="no" /> 아니오
-      </label>
+    <div class="inline-options">
+      <label><input type="radio" name="partner" value="yes" /> 예</label>
+      <label><input type="radio" name="partner" value="no" /> 아니오</label>
     </div>
 
     <label for="region">운영희망지역</label>
     <input type="text" id="region" placeholder="예: 서울" />
 
     <label>선정산 적용여부</label>
-    <div class="radio-group">
-      <label class="radio-option">
-        <input type="radio" name="prepay" value="yes" /> 적용
-      </label>
-      <label class="radio-option">
-        <input type="radio" name="prepay" value="no" /> 미적용
-      </label>
+    <div class="inline-options">
+      <label><input type="radio" name="prepay" value="yes" /> 적용</label>
+      <label><input type="radio" name="prepay" value="no" /> 미적용</label>
     </div>
 
     <div class="upload-group">

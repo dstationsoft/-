@@ -39,6 +39,7 @@
     }
     input[type="text"],
     input[type="tel"],
+    input[type="email"],
     input[type="file"],
     select {
       width: 100%;
@@ -98,34 +99,33 @@
       <a href="https://dstationsoft.com">
         <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" />
       </a>
-
       <h1>디스테이션 디패스 회원가입</h1>
 
       <label for="owner">영업자</label>
       <input type="text" id="owner" name="owner" placeholder="예: 홍길동" required />
 
       <label for="name">성함</label>
-      <input type="text" id="name" name="name" placeholder="예: 김대표" required />
+      <input type="text" id="name" name="이름" placeholder="예: 김대표" required />
 
       <label for="phone">휴대폰번호</label>
-      <input type="tel" id="phone" name="phone" placeholder="예: 010-1234-5678" required />
+      <input type="tel" id="phone" name="했드폰" placeholder="예: 010-1234-5678" required />
 
       <label for="baeminId">배민비즈회원아이디</label>
       <input type="text" id="baeminId" name="baeminId" placeholder="예: baemin1234" />
 
       <label>협력사 운영여부</label>
       <div class="inline-options">
-        <label><input type="radio" name="partner" value="예" required /> 예</label>
-        <label><input type="radio" name="partner" value="아니오" /> 아니오</label>
+        <label><input type="radio" name="파트너" value="예" required /> 예</label>
+        <label><input type="radio" name="파트너" value="아니오" /> 아니오</label>
       </div>
 
       <label for="region">운영희망지역</label>
-      <input type="text" id="region" name="region" placeholder="예: 서울" />
+      <input type="text" id="region" name="지역" placeholder="예: 서울" />
 
       <label>선정산 적용여부</label>
       <div class="inline-options">
-        <label><input type="radio" name="prepay" value="적용" required /> 적용</label>
-        <label><input type="radio" name="prepay" value="미적용" /> 미적용</label>
+        <label><input type="radio" name="선불" value="적용" required /> 적용</label>
+        <label><input type="radio" name="선불" value="미적용" /> 미적용</label>
       </div>
 
       <div class="upload-group">
@@ -163,16 +163,19 @@
       </div>
 
       <div class="checkbox-group">
-        <input type="checkbox" id="agree" name="agree" value="동의함" required />
+        <input type="checkbox" id="agree" name="동의하다" value="동의함" required />
         <label for="agree">개인정보 수집 및 이용에 동의합니다.</label>
       </div>
+
+      <label for="email">이메일 주소</label>
+      <input type="email" id="email" name="email" placeholder="예: example@example.com" required />
 
       <button type="submit" class="submit-btn">가입 신청하기</button>
     </form>
   </div>
 
   <script>
-    emailjs.init("caUbhNHlOnDhFoB4Z"); // Public Key
+    emailjs.init("caUbhNHlOnDhFoB4Z");
 
     document.getElementById("form").addEventListener("submit", function (e) {
       e.preventDefault();

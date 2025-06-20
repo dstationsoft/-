@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>협력사 회원가입</title>
+  <title>디스테이션 디패스 회원가입</title>
   <style>
     body {
       font-family: Pretendard, sans-serif;
@@ -39,88 +39,8 @@
       display: flex;
       gap: 16px;
       margin-bottom: 16px;
+      align-items: center;
     }
     .upload-group {
       margin-bottom: 16px;
     }
-    .upload-group input {
-      border-style: dashed;
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 16px;
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .footer-text {
-      text-align: center;
-      margin-top: 16px;
-      color: #2563eb;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- D PASS 로고 -->
-    <a href="https://dstationsoft.com">
-      <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" style="display:block; margin:0 auto 16px; max-width:120px;" />
-    </a>
-
-    <h1>협력사 회원가입</h1>
-
-    <label for="owner">영업자</label>
-    <input type="text" id="owner" placeholder="예: 홍길동" />
-
-    <label for="name">성함</label>
-    <input type="text" id="name" placeholder="예: 김대표" />
-
-    <label for="phone">휴대폰번호</label>
-    <input type="tel" id="phone" placeholder="예: 010-1234-5678" />
-
-    <label for="baeminId">배민비즈회원아이디</label>
-    <input type="text" id="baeminId" placeholder="예: baemin1234" />
-
-    <label>협력사 운영여부</label>
-    <div class="radio-group">
-      <label><input type="radio" name="partner" /> 예</label>
-      <label><input type="radio" name="partner" /> 아니오</label>
-    </div>
-
-    <label for="region">운영희망지역</label>
-    <input type="text" id="region" placeholder="예: 서울" />
-
-    <label>선정산 적용여부</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" /> 적용 희망</label>
-    </div>
-
-    <div class="upload-group">
-      <label for="biz">사업자등록증 사본</label>
-      <input type="file" id="biz" />
-    </div>
-
-    <div class="upload-group">
-      <label for="idcard">대표자 신분증 사본</label>
-      <input type="file" id="idcard" />
-    </div>
-
-    <div class="upload-group">
-      <label for="bank">통장 사본</label>
-      <input type="file" id="bank" />
-    </div>
-
-    <div class="checkbox-group">
-      <label><input type="checkbox" /> 개인정보 수집 및 이용에 동의합니다. <a href="#">[자세히 보기]</a></label>
-    </div>
-
-    <button class="submit-btn">가입 신청하기</button>
-
-    <p class="footer-text">이미 가입하셨나요? 로그인</p>
-  </div>
-</body>
-</html>

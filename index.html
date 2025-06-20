@@ -4,26 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>디스테이션 디패스 회원가입</title>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <style>
-    * { box-sizing: border-box; }
     body {
       font-family: Pretendard, sans-serif;
       background-color: #f8fafc;
       margin: 0;
       padding: 24px 16px;
-      overflow-x: hidden;
     }
     .container {
-      width: 100%;
       max-width: 360px;
-      margin: 0 auto;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 16px;
+      margin: auto;
     }
     h1 {
       text-align: center;
@@ -41,7 +31,7 @@
     input[type="tel"],
     input[type="email"],
     input[type="file"],
-    select {
+    textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #cbd5e1;
@@ -49,20 +39,16 @@
       margin-bottom: 16px;
       font-size: 14px;
     }
-    .inline-options {
+    .radio-group {
       display: flex;
       gap: 16px;
       margin-bottom: 16px;
     }
-    .inline-options label {
-      display: inline-flex;
+    .radio-group label {
+      display: flex;
       align-items: center;
-      white-space: nowrap;
       gap: 6px;
-      font-size: 14px;
     }
-    .upload-group { margin-bottom: 16px; }
-    .upload-group input { border-style: dashed; }
     .checkbox-group {
       display: flex;
       align-items: center;
@@ -79,115 +65,64 @@
       font-size: 16px;
       cursor: pointer;
     }
-    .privacy-info {
-      font-size: 12px;
-      color: #4b5563;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-    .privacy-title {
-      font-weight: bold;
-      font-size: 14px;
-      color: #1f2937;
-      margin-bottom: 8px;
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 16px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <form id="form">
+    <form action="https://getform.io/f/aejlzljb" method="POST" enctype="multipart/form-data">
       <a href="https://dstationsoft.com">
         <img src="https://raw.githubusercontent.com/dstationsoft/-/main/001.png" alt="D PASS 로고" />
       </a>
       <h1>디스테이션 디패스 회원가입</h1>
 
       <label for="owner">영업자</label>
-      <input type="text" id="owner" name="owner" placeholder="예: 홍길동" required />
+      <input type="text" name="영업자" id="owner" required />
 
       <label for="name">성함</label>
-      <input type="text" id="name" name="이름" placeholder="예: 김대표" required />
+      <input type="text" name="성함" id="name" required />
 
       <label for="phone">휴대폰번호</label>
-      <input type="tel" id="phone" name="했드폰" placeholder="예: 010-1234-5678" required />
+      <input type="tel" name="휴대폰번호" id="phone" required />
 
       <label for="baeminId">배민비즈회원아이디</label>
-      <input type="text" id="baeminId" name="baeminId" placeholder="예: baemin1234" />
+      <input type="text" name="배민아이디" id="baeminId" />
 
       <label>협력사 운영여부</label>
-      <div class="inline-options">
-        <label><input type="radio" name="파트너" value="예" required /> 예</label>
-        <label><input type="radio" name="파트너" value="아니오" /> 아니오</label>
+      <div class="radio-group">
+        <label><input type="radio" name="협력사운영" value="예" required /> 예</label>
+        <label><input type="radio" name="협력사운영" value="아니오" /> 아니오</label>
       </div>
 
       <label for="region">운영희망지역</label>
-      <input type="text" id="region" name="지역" placeholder="예: 서울" />
+      <input type="text" name="운영희망지역" id="region" required />
 
       <label>선정산 적용여부</label>
-      <div class="inline-options">
-        <label><input type="radio" name="선불" value="적용" required /> 적용</label>
-        <label><input type="radio" name="선불" value="미적용" /> 미적용</label>
+      <div class="radio-group">
+        <label><input type="radio" name="선정산" value="적용" required /> 적용</label>
+        <label><input type="radio" name="선정산" value="미적용" /> 미적용</label>
       </div>
 
-      <div class="upload-group">
-        <label for="biz">사업자등록증 사본</label>
-        <input type="file" id="biz" name="biz" />
-      </div>
+      <label for="biz">사업자등록증 사본</label>
+      <input type="file" name="사업자등록증" id="biz" required />
 
-      <div class="upload-group">
-        <label for="idcard">대표자 신분증 사본</label>
-        <input type="file" id="idcard" name="idcard" />
-      </div>
+      <label for="idcard">대표자 신분증 사본</label>
+      <input type="file" name="신분증" id="idcard" required />
 
-      <div class="upload-group">
-        <label for="bank">통장 사본</label>
-        <input type="file" id="bank" name="bank" />
-      </div>
-
-      <div class="privacy-title">디스테이션 디패스 개인정보 이용동의</div>
-      <div class="privacy-info">
-        <p><strong>디스테이션 디패스 가입</strong>을 위해 아래와 같이 개인정보를 수집 및 이용하고자 합니다.</p>
-        <p><strong>1. 수집 및 이용 목적</strong><br>
-        • 협력사 개설을 위한 신원 확인 및 자격 검토<br>
-        • 계약 체결 및 운영 관리<br>
-        • 관련 법령에 따른 의무 이행</p>
-        <p><strong>2. 수집하는 개인정보 항목</strong><br>
-        • 필수 항목: 성명, 연락처(전화번호, 이메일), 주소, 사업자등록번호, 신분증 사본<br>
-        • 선택 항목: 추가 연락처, 배송원 등록 정보 등 협력사 운영과 관련된 정보</p>
-        <p><strong>3. 보유 및 이용 기간</strong><br>
-        수집된 개인정보는 협력사 관계가 종료된 이후에도 관련 법령에 따라 일정 기간 보관되며, 보관 기간 종료 후 즉시 파기됩니다.<br>
-        • 보유 기간: 운영 종료 후 3년 (법적 의무 사항에 따라 변경 가능)</p>
-        <p><strong>4. 동의 거부권 및 불이익</strong><br>
-        귀하는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있습니다.<br>
-        다만, 동의를 거부할 경우 협력사 개설이 제한될 수 있습니다.</p>
-        <p><strong>동의 여부를 위해 아래에 체크해 주시기 바랍니다.</strong></p>
-      </div>
+      <label for="bank">통장 사본</label>
+      <input type="file" name="통장사본" id="bank" required />
 
       <div class="checkbox-group">
-        <input type="checkbox" id="agree" name="동의하다" value="동의함" required />
+        <input type="checkbox" name="개인정보동의" value="동의함" id="agree" required />
         <label for="agree">개인정보 수집 및 이용에 동의합니다.</label>
       </div>
-
-      <label for="email">이메일 주소</label>
-      <input type="email" id="email" name="email" placeholder="예: example@example.com" required />
 
       <button type="submit" class="submit-btn">가입 신청하기</button>
     </form>
   </div>
-
-  <script>
-    emailjs.init("caUbhNHlOnDhFoB4Z");
-
-    document.getElementById("form").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      emailjs.sendForm("service_nq7igxj", "template_282mlya", this)
-        .then(function () {
-          alert("가입 신청이 성공적으로 전송되었습니다!");
-          document.getElementById("form").reset();
-        }, function (error) {
-          alert("전송에 실패했습니다: " + JSON.stringify(error));
-        });
-    });
-  </script>
 </body>
 </html>
